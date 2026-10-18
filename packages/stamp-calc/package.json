@@ -1,0 +1,46 @@
+{
+  "name": "balford-stamping-calculators",
+  "version": "0.1.0",
+  "description": "Dependency-free deep drawing, blanking force and bend allowance calculators for stamping engineers.",
+  "type": "module",
+  "main": "./src/index.js",
+  "types": "./src/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./src/index.d.ts",
+      "import": "./src/index.js",
+      "default": "./src/index.js"
+    }
+  },
+  "files": [
+    "src",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node --test test/*.test.js"
+  },
+  "keywords": [
+    "deep-drawing",
+    "metal-stamping",
+    "blanking-force",
+    "bend-allowance",
+    "sheet-metal",
+    "dfm",
+    "manufacturing"
+  ],
+  "homepage": "https://balford.net/resources/calculator/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/balford-mechatronics/balford.git",
+    "directory": "packages/stamp-calc"
+  },
+  "bugs": {
+    "url": "https://github.com/balford-mechatronics/balford/issues"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "sideEffects": false
+}

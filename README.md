@@ -6,6 +6,10 @@
 ![ISO 9001](https://img.shields.io/badge/ISO-9001%3A2015-003a00)
 ![IATF-aligned](https://img.shields.io/badge/IATF%2016949-practices-00a86b)
 ![PPAP](https://img.shields.io/badge/PPAP-ready-a8003d)
+![Languages](https://img.shields.io/badge/resources-36%2B%20languages-007a4d)
+![PDF library](https://img.shields.io/badge/PDF-18%20documents%20%2B%20volume-a8003d)
+![Chrome](https://img.shields.io/badge/Chrome%20extension-ready-00a86b)
+![npm](https://img.shields.io/badge/npm%20package-ready-cb3837)
 [![tests](https://github.com/balford-mechatronics/balford/actions/workflows/tests.yml/badge.svg)](https://github.com/balford-mechatronics/balford/actions/workflows/tests.yml)
 
 Command-line calculators and design checks for **metal stamping, deep drawing, progressive die work and sheet metal bending** — the same rules our DFM engineers apply every day at [Balford](https://balford.net/), a 12,000 m² precision metal forming plant in Zhuji, Zhejiang, China.
@@ -17,6 +21,22 @@ Use this toolset early in the design phase to answer the questions that decide t
 - How much **blanking / cutting force** does the press need?
 - What is the **bend allowance** for a given radius, thickness and angle?
 - How much does the blank or finished part **weigh**?
+
+## Public engineering resources
+
+The repository is one part of a larger public engineering library:
+
+| Resource | What you will find |
+|---|---|
+| [Balford Engineering Answers](https://balford.net/ask/) | Cited answers on fine blanking, thinning deep drawing, materials, tolerances, tooling, DFM and RFQ preparation |
+| [Metal fabrication calculators](https://balford.net/resources/calculator/) | Deep drawing force, blanking force, bend allowance, tube unfold, material weight and springback |
+| [Technical PDF library](https://balford.net/resources/technical-series/) | Eighteen individual technical documents plus a 37-page compiled volume |
+| [Site search](https://balford.net/search/) | Search capabilities, applications, materials, cases and engineering resources |
+| [RFQ and drawing upload](https://rfq.balford.net/) | Route a 2D/3D drawing through engineering and quotation review |
+
+The public resource network is available in more than 35 languages and regional
+variant editions. See [docs/resource-index.md](docs/resource-index.md) for a
+curated index, or import the [Notion engineering hub](notion/Balford-Engineering-Hub.md).
 
 ## Install
 
@@ -63,6 +83,45 @@ print(result.blank_diameter_mm)   # ~66.7
 print(result.draw_ratio)          # ~3.03
 print(result.verdict)             # "multi-stage"
 ```
+
+## JavaScript, npm and Chrome extension
+
+The browser assets share one dependency-free calculation core:
+
+- [`packages/stamp-calc`](packages/stamp-calc/) — npm package source for deep drawing, blanking and bend calculations.
+- [`apps/chrome-extension`](apps/chrome-extension/) — Manifest V3 extension with all three calculators.
+- [`notion/Balford-Engineering-Hub.md`](notion/Balford-Engineering-Hub.md) — import-ready Notion resource page.
+
+Install the package from this checkout:
+
+```bash
+npm install ./packages/stamp-calc
+```
+
+```js
+import { deepDrawingForce } from "balford-stamping-calculators";
+
+const result = deepDrawingForce({
+  blankDiameterMm: 100,
+  productDiameterMm: 65,
+  thicknessMm: 1.5,
+  tensileStrengthMpa: 310,
+});
+
+console.log(result.punchForceKN);
+```
+
+Build the unpacked extension and Chrome Web Store ZIP:
+
+```bash
+npm test
+npm run build:extension
+npm run pack:extension
+```
+
+The extension requests no permissions, sends no entered dimensions off the
+device and imports the same core published for npm. The store listing copy is in
+[`apps/chrome-extension/STORE-LISTING.md`](apps/chrome-extension/STORE-LISTING.md).
 
 ## Reference data
 
@@ -113,7 +172,9 @@ The formulas are simplified first-pass estimates used for feasibility and quotin
 - [Capability boundaries, stated honestly](https://balford.net/deep-drawn-metal-stamping-our-capability-boundaries/)
 - [Progressive die stamping services](https://balford.net/capabilities/progressive-die-metal-stamping/)
 - [In-house tooling design & build](https://balford.net/capabilities/in-house-tooling-design-build/)
+- [Engineering answer console](https://balford.net/ask/)
 - [Online calculators on balford.net](https://balford.net/resources/calculator/)
+- [Technical Series and downloadable PDFs](https://balford.net/resources/technical-series/)
 - [PPAP-ready automotive documentation](https://balford.net/ppap/)
 
 The guide is also published in German (https://balford.net/de/tiefziehen/), Chinese
@@ -151,4 +212,4 @@ Provided under MIT license as engineering estimation tools. Results are not a su
 
 ---
 
-**Balford** · Founded 2017 · ISO 9001:2015 · IATF 16949-aligned controls · [balford.net](https://balford.net/) · Send drawings for a free DFM review at [rfq.balford.net](https://rfq.balford.net/)
+**Balford** · Founded 2017 · ISO 9001:2015 · IATF 16949-aligned controls · [balford.net](https://balford.net/) · Send drawings for engineering and quotation review at [rfq.balford.net](https://rfq.balford.net/)

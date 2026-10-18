@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Balford Stamping Calculators - Store Preview</title>
+    <style>
+      * { box-sizing: border-box; }
+      html, body { width: 1280px; height: 800px; margin: 0; overflow: hidden; }
+      body {
+        display: grid;
+        grid-template-columns: 0.93fr 1.07fr;
+        gap: 64px;
+        align-items: center;
+        padding: 74px 84px;
+        color: #f4fff8;
+        background:
+          radial-gradient(circle at 75% 18%, rgba(0, 168, 107, 0.48), transparent 28%),
+          radial-gradient(circle at 12% 86%, rgba(0, 168, 107, 0.22), transparent 32%),
+          linear-gradient(135deg, #001b00, #003a00 55%, #064f31);
+        font-family: "Segoe UI", Arial, sans-serif;
+      }
+      .copy .kicker {
+        margin: 0 0 16px;
+        color: #7fe0b0;
+        font-size: 17px;
+        font-weight: 800;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+      }
+      .copy h1 {
+        max-width: 520px;
+        margin: 0 0 22px;
+        font-family: "Arial Narrow", "Roboto Condensed", Arial, sans-serif;
+        font-size: 58px;
+        line-height: 0.98;
+        text-transform: uppercase;
+      }
+      .copy p {
+        max-width: 500px;
+        margin: 0 0 26px;
+        color: #d4efdf;
+        font-size: 20px;
+        line-height: 1.55;
+      }
+      .points { display: grid; gap: 12px; font-size: 17px; font-weight: 700; }
+      .points span::before { content: "✓"; margin-right: 10px; color: #7fe0b0; }
+      .device {
+        justify-self: center;
+        width: 470px;
+        padding: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        border-radius: 24px;
+        background: rgba(255, 255, 255, 0.12);
+        box-shadow: 0 32px 80px rgba(0, 0, 0, 0.4);
+      }
+      iframe {
+        display: block;
+        width: 450px;
+        height: 600px;
+        border: 0;
+        border-radius: 16px;
+        background: #f5f7f3;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="copy">
+      <p class="kicker">Balford engineering tools</p>
+      <h1>Stamping calculations without the spreadsheet</h1>
+      <p>Fast first-pass checks for draw ratio, press force and flat length, available from the Chrome toolbar.</p>
+      <div class="points">
+        <span>Works offline</span>
+        <span>No account or permissions</span>
+        <span>No entered dimensions leave the browser</span>
+      </div>
+    </section>
+    <div class="device">
+      <iframe title="Balford Stamping Calculators" src="../../dist/balford-stamping-calculator/popup.html"></iframe>
+    </div>
+  </body>
+</html>

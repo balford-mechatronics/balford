@@ -29,6 +29,8 @@ jobs:
         run: balford bend-allowance --radius 2 --thickness 1.5 --angle 90
       - name: Blank weight
         run: balford weight --area 380 --thickness 1.5 --material steel
+      - name: Unit tests
+        run: python -m unittest discover -s tests -v
       - name: Reference data files are present
         run: |
           test -s data/limit-draw-ratios.csv
@@ -36,3 +38,25 @@ jobs:
           test -s data/deep-drawing-defects.csv
           test -s data/deep-drawing-materials.csv
           test -s docs/deep-drawing-design-guide.md
+
+  javascript:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: JavaScript calculator tests
+        run: npm test
+      - name: Build Chrome extension
+        run: npm run build:extension
+      - name: Pack Chrome extension
+        run: npm run pack:extension
+      - name: Verify extension package
+        run: |
+          test -s dist/balford-stamping-calculator/manifest.json
+          test -s dist/balford-stamping-calculator/lib/stamp-calc.js
+          test -s dist/balford-stamping-calculator-v0.1.0.zip

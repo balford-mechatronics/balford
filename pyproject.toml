@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "balford-tools"
-version = "0.2.0"
+version = "0.3.0"
 description = "Automated toolset for stamping, deep drawing, and sheet metal die design & simulation"
 readme = "README.md"
 requires-python = ">=3.9"

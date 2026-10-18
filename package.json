@@ -1,0 +1,13 @@
+{
+  "name": "balford-engineering-tools",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test packages/stamp-calc/test/*.test.js",
+    "icons": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/generate-icons.ps1",
+    "build:extension": "node scripts/build-extension.mjs",
+    "store:screenshot": "node scripts/build_store_screenshot.mjs",
+    "pack:extension": "python scripts/pack_extension.py",
+    "check": "npm test && npm run build:extension && python -m unittest discover -s tests -v"
+  }
+}

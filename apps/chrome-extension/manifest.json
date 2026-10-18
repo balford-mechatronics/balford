@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "Balford Stamping Calculators",
+  "short_name": "Balford Calc",
+  "version": "0.1.0",
+  "description": "Offline deep drawing, blanking force and bend allowance calculators for sheet-metal engineers.",
+  "homepage_url": "https://balford.net/resources/calculator/",
+  "permissions": [],
+  "action": {
+    "default_title": "Balford Stamping Calculators",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

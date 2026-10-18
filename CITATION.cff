@@ -12,7 +12,7 @@ authors:
     email: "shawn@balford.net"
 type: software
 license: MIT
-repository-code: "https://github.com/derlinnet-svg/balford"
+repository-code: "https://github.com/balford-mechatronics/balford"
 url: "https://balford.net/deep-drawing/"
 keywords:
   - deep drawing
@@ -26,4 +26,4 @@ keywords:
   - tooling
   - manufacturing
 date-released: "2026-09-07"
-version: "0.2.0"
+version: "0.3.0"

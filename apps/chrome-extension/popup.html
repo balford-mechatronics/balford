@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Balford Stamping Calculators</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <img src="icons/icon48.png" width="44" height="44" alt="" />
+      <div>
+        <p class="eyebrow">Balford engineering tools</p>
+        <h1>Stamping calculators</h1>
+      </div>
+    </header>
+
+    <nav class="tabs" role="tablist" aria-label="Calculators">
+      <button class="tab is-active" type="button" role="tab" aria-selected="true" aria-controls="deep-panel" data-tab="deep">
+        Deep draw
+      </button>
+      <button class="tab" type="button" role="tab" aria-selected="false" aria-controls="blank-panel" data-tab="blank">
+        Blanking
+      </button>
+      <button class="tab" type="button" role="tab" aria-selected="false" aria-controls="bend-panel" data-tab="bend">
+        Bend
+      </button>
+    </nav>
+
+    <main>
+      <section id="deep-panel" class="panel is-active" role="tabpanel">
+        <p class="intro">Estimate the first-draw coefficient, punch force and tool-radius range.</p>
+        <form id="deep-form" class="calc-form">
+          <label>
+            Blank diameter, D
+            <span class="field"><input name="blankDiameterMm" type="number" min="0.01" step="any" value="100" required /><b>mm</b></span>
+          </label>
+          <label>
+            Product diameter, d
+            <span class="field"><input name="productDiameterMm" type="number" min="0.01" step="any" value="65" required /><b>mm</b></span>
+          </label>
+          <label>
+            Sheet thickness, t
+            <span class="field"><input name="thicknessMm" type="number" min="0.01" step="any" value="1.5" required /><b>mm</b></span>
+          </label>
+          <label>
+            Tensile strength
+            <span class="field"><input name="tensileStrengthMpa" type="number" min="1" step="any" value="310" required /><b>MPa</b></span>
+          </label>
+        </form>
+        <div id="deep-result" class="result" aria-live="polite"></div>
+      </section>
+
+      <section id="blank-panel" class="panel" role="tabpanel" hidden>
+        <p class="intro">Estimate circular blanking force, stripping force and punch stress.</p>
+        <form id="blank-form" class="calc-form">
+          <label>
+            Punch diameter
+            <span class="field"><input name="punchDiameterMm" type="number" min="0.01" step="any" value="80" required /><b>mm</b></span>
+          </label>
+          <label>
+            Sheet thickness
+            <span class="field"><input name="thicknessMm" type="number" min="0.01" step="any" value="1.5" required /><b>mm</b></span>
+          </label>
+          <label>
+            Shear strength
+            <span class="field"><input name="shearStrengthMpa" type="number" min="1" step="any" value="360" required /><b>MPa</b></span>
+          </label>
+        </form>
+        <div id="blank-result" class="result" aria-live="polite"></div>
+      </section>
+
+      <section id="bend-panel" class="panel" role="tabpanel" hidden>
+        <p class="intro">Calculate bend allowance, deduction and flat length from a K-factor.</p>
+        <form id="bend-form" class="calc-form">
+          <label>
+            Inside radius
+            <span class="field"><input name="insideRadiusMm" type="number" min="0" step="any" value="2" required /><b>mm</b></span>
+          </label>
+          <label>
+            Sheet thickness
+            <span class="field"><input name="thicknessMm" type="number" min="0.01" step="any" value="1.5" required /><b>mm</b></span>
+          </label>
+          <label>
+            Bend angle
+            <span class="field"><input name="bendAngleDeg" type="number" min="0.1" max="179.9" step="any" value="90" required /><b>deg</b></span>
+          </label>
+          <label>
+            K-factor
+            <span class="field"><input name="kFactor" type="number" min="0" max="0.5" step="0.01" value="0.33" required /><b>K</b></span>
+          </label>
+          <label>
+            Leg 1
+            <span class="field"><input name="leg1Mm" type="number" min="0.01" step="any" value="40" required /><b>mm</b></span>
+          </label>
+          <label>
+            Leg 2
+            <span class="field"><input name="leg2Mm" type="number" min="0.01" step="any" value="25" required /><b>mm</b></span>
+          </label>
+        </form>
+        <div id="bend-result" class="result" aria-live="polite"></div>
+      </section>
+    </main>
+
+    <aside class="note">
+      First-pass estimates only. Confirm tooling and production limits against the drawing, material lot and tryout.
+    </aside>
+
+    <footer>
+      <a href="https://balford.net/resources/calculator/?utm_source=chrome_extension&amp;utm_medium=referral&amp;utm_campaign=stamping_calculators" target="_blank" rel="noopener noreferrer">All web calculators</a>
+      <a href="https://balford.net/ask/?utm_source=chrome_extension&amp;utm_medium=referral&amp;utm_campaign=stamping_calculators" target="_blank" rel="noopener noreferrer">Ask engineering</a>
+      <a href="https://balford.net/resources/technical-series/?utm_source=chrome_extension&amp;utm_medium=referral&amp;utm_campaign=stamping_calculators" target="_blank" rel="noopener noreferrer">PDF library</a>
+      <a href="privacy.html" target="_blank" rel="noopener noreferrer">Privacy</a>
+    </footer>
+
+    <script type="module" src="popup.js"></script>
+  </body>
+</html>

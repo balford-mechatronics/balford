@@ -1,0 +1,237 @@
+:root {
+  color-scheme: light;
+  --ink: #12241a;
+  --muted: #506359;
+  --paper: #f5f7f3;
+  --card: #ffffff;
+  --green: #00a86b;
+  --deep: #003a00;
+  --line: #d8e2da;
+  --warning: #a8003d;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-width: 410px;
+  background: var(--paper);
+  color: var(--ink);
+  font: 13px/1.45 "Segoe UI", Arial, sans-serif;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.hero {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 16px 18px;
+  background:
+    radial-gradient(circle at 90% 10%, rgba(0, 168, 107, 0.36), transparent 34%),
+    linear-gradient(135deg, #002700, #004d2b 70%, #00623a);
+  color: #fff;
+}
+
+.hero img {
+  border-radius: 10px;
+  box-shadow: 0 5px 16px rgba(0, 0, 0, 0.24);
+}
+
+.eyebrow {
+  margin: 0 0 2px;
+  color: #8cf0bf;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  margin: 0;
+  font: 800 22px/1.05 "Arial Narrow", "Roboto Condensed", Arial, sans-serif;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.tabs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background: #fff;
+  border-bottom: 1px solid var(--line);
+}
+
+.tab {
+  appearance: none;
+  border: 0;
+  border-bottom: 3px solid transparent;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  font: 700 12px/1 "Segoe UI", Arial, sans-serif;
+  padding: 13px 6px 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.tab:hover {
+  color: var(--deep);
+}
+
+.tab.is-active {
+  border-bottom-color: var(--green);
+  color: var(--deep);
+}
+
+main {
+  padding: 14px 18px 12px;
+}
+
+.panel[hidden] {
+  display: none;
+}
+
+.intro {
+  margin: 0 0 12px;
+  color: var(--muted);
+  font-size: 12.5px;
+}
+
+.calc-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.calc-form label {
+  color: #34453b;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.field {
+  display: flex;
+  align-items: center;
+  margin-top: 4px;
+  border: 1px solid #cbd8cf;
+  background: #fff;
+  border-radius: 7px;
+  overflow: hidden;
+  transition: border-color 130ms ease, box-shadow 130ms ease;
+}
+
+.field:focus-within {
+  border-color: var(--green);
+  box-shadow: 0 0 0 3px rgba(0, 168, 107, 0.12);
+}
+
+.field input {
+  width: 100%;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--ink);
+  font: 700 15px/1 "Segoe UI", Arial, sans-serif;
+  padding: 9px 8px 9px 10px;
+}
+
+.field b {
+  color: #718078;
+  font-size: 10px;
+  font-weight: 800;
+  padding: 0 8px;
+}
+
+.result {
+  min-height: 112px;
+  margin-top: 13px;
+  border: 1px solid #cbded2;
+  border-left: 4px solid var(--green);
+  border-radius: 8px;
+  background: var(--card);
+  padding: 13px 14px;
+}
+
+.result.is-error {
+  border-color: #e9b3c5;
+  border-left-color: var(--warning);
+  color: #7b1237;
+}
+
+.primary-value {
+  display: block;
+  color: var(--deep);
+  font: 800 27px/1.1 "Arial Narrow", "Roboto Condensed", Arial, sans-serif;
+}
+
+.primary-label,
+.metric span {
+  color: var(--muted);
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.metric-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 9px 12px;
+  margin-top: 11px;
+}
+
+.metric {
+  min-width: 0;
+}
+
+.metric strong {
+  display: block;
+  margin-top: 1px;
+  color: var(--ink);
+  font-size: 13px;
+}
+
+.warning {
+  margin: 9px 0 0;
+  color: #8a3151;
+  font-size: 11px;
+}
+
+.note {
+  border-top: 1px solid var(--line);
+  padding: 10px 18px;
+  background: #edf3ee;
+  color: #5e6e65;
+  font-size: 10.5px;
+}
+
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 12px;
+  padding: 11px 18px 14px;
+  background: #0b120d;
+}
+
+footer a {
+  color: #9ee7c4;
+  font-size: 10.5px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}
