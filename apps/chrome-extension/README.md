@@ -1,4 +1,4 @@
-# Balford Stamping Calculators Chrome extension
+# Balford Stamping Calculators browser extension source
 
 Manifest V3 popup with three offline calculators:
 
@@ -19,8 +19,12 @@ npm run build:extension
 npm run pack:extension
 ```
 
-The unpacked extension is written to `dist/balford-stamping-calculator/`. The
-Chrome Web Store ZIP is written to `dist/balford-stamping-calculator-v0.1.0.zip`.
+The unpacked extension is written to `dist/balford-stamping-calculator/`. An
+optional self-distribution ZIP is written to
+`dist/balford-stamping-calculator-v0.1.0.zip`.
+
+There is no Chrome Web Store registration or submission in the current
+distribution plan.
 
 ## Local test
 

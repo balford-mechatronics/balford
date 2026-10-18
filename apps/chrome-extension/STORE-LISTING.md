@@ -1,4 +1,7 @@
-# Chrome Web Store listing
+# Optional Chrome Web Store listing draft
+
+This file is a draft only. The extension is not registered, submitted or
+distributed through the Chrome Web Store.
 
 ## Name
 

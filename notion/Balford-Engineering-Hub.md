@@ -38,7 +38,10 @@ All six calculators are free, work without an account and accept metric values u
 | [Material weight](https://balford.net/resources/calculator/material-weight/) | Gross mass for plates, bars, tubes, angles and rings |
 | [Springback](https://balford.net/resources/calculator/springback/) | Springback ratio, overbend setpoint and final radius for V bending |
 
-The same three core checks are available in the **Balford Stamping Calculators** Chrome extension and as the `balford-stamping-calculators` JavaScript package.
+The same three core checks are also packaged as a Manifest V3 browser extension
+source and a `balford-stamping-calculators` JavaScript package in the Balford
+GitHub repository. The extension can be loaded unpacked; it is not distributed
+through the Chrome Web Store.
 
 ## Technical PDF library
 

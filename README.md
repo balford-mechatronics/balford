@@ -8,8 +8,8 @@
 ![PPAP](https://img.shields.io/badge/PPAP-ready-a8003d)
 ![Languages](https://img.shields.io/badge/resources-36%2B%20languages-007a4d)
 ![PDF library](https://img.shields.io/badge/PDF-18%20documents%20%2B%20volume-a8003d)
-![Chrome](https://img.shields.io/badge/Chrome%20extension-ready-00a86b)
-![npm](https://img.shields.io/badge/npm%20package-ready-cb3837)
+![Chrome](https://img.shields.io/badge/Chrome%20extension-source%20only-00a86b)
+[![npm](https://img.shields.io/npm/v/balford-stamping-calculators?label=npm&color=cb3837)](https://www.npmjs.com/package/balford-stamping-calculators)
 [![tests](https://github.com/balford-mechatronics/balford/actions/workflows/tests.yml/badge.svg)](https://github.com/balford-mechatronics/balford/actions/workflows/tests.yml)
 
 Command-line calculators and design checks for **metal stamping, deep drawing, progressive die work and sheet metal bending** — the same rules our DFM engineers apply every day at [Balford](https://balford.net/), a 12,000 m² precision metal forming plant in Zhuji, Zhejiang, China.
@@ -85,18 +85,18 @@ print(result.draw_ratio)          # ~3.03
 print(result.verdict)             # "multi-stage"
 ```
 
-## JavaScript, npm and Chrome extension
+## JavaScript, npm and browser extension source
 
 The browser assets share one dependency-free calculation core:
 
-- [`packages/stamp-calc`](packages/stamp-calc/) — npm package source for deep drawing, blanking and bend calculations.
-- [`apps/chrome-extension`](apps/chrome-extension/) — Manifest V3 extension with all three calculators.
+- [`packages/stamp-calc`](packages/stamp-calc/) — source for the published [`balford-stamping-calculators`](https://www.npmjs.com/package/balford-stamping-calculators) package.
+- [`apps/chrome-extension`](apps/chrome-extension/) — Manifest V3 source with all three calculators. It can be loaded unpacked; it is not submitted to or distributed through the Chrome Web Store.
 - [`notion/Balford-Engineering-Hub.md`](notion/Balford-Engineering-Hub.md) — import-ready source for the [live Notion engineering hub](https://reinvented-pulsar-977.notion.site/Balford-Engineering-Hub-58f3230be4918224b694810021478d9f).
 
-Install the package from this checkout:
+Install the published package:
 
 ```bash
-npm install ./packages/stamp-calc
+npm install balford-stamping-calculators
 ```
 
 ```js
@@ -112,7 +112,7 @@ const result = deepDrawingForce({
 console.log(result.punchForceKN);
 ```
 
-Build the unpacked extension and Chrome Web Store ZIP:
+Build the unpacked extension and an optional self-distribution ZIP:
 
 ```bash
 npm test
@@ -121,7 +121,8 @@ npm run pack:extension
 ```
 
 The extension requests no permissions, sends no entered dimensions off the
-device and imports the same core published for npm. The store listing copy is in
+device and imports the same core published for npm. Chrome Web Store publishing
+is not part of the current distribution plan. A draft listing is retained in
 [`apps/chrome-extension/STORE-LISTING.md`](apps/chrome-extension/STORE-LISTING.md).
 
 ## Reference data

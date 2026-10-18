@@ -24,8 +24,9 @@ the public material does not cover the question.
 - [Material weight](https://balford.net/resources/calculator/material-weight/)
 - [Springback](https://balford.net/resources/calculator/springback/)
 
-The offline Chrome extension and npm package implement the deep drawing,
-blanking and bend checks from this repository.
+The offline Chrome extension source and npm package implement the deep drawing,
+blanking and bend checks from this repository. The extension can be loaded
+unpacked; no Chrome Web Store distribution is planned.
 
 ## PDFs
 
