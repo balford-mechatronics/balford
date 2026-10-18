@@ -8,6 +8,13 @@
 - the eighteen-document technical PDF series
 - the RFQ / drawing-upload route
 
+## Live page
+
+https://reinvented-pulsar-977.notion.site/Balford-Engineering-Hub-58f3230be4918224b694810021478d9f
+
+The live page is published, search-engine indexing is enabled, and the public
+page no longer emits a `noindex` robots meta tag.
+
 ## Import
 
 1. In Notion, open the destination workspace or parent page.

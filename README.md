@@ -32,6 +32,7 @@ The repository is one part of a larger public engineering library:
 | [Metal fabrication calculators](https://balford.net/resources/calculator/) | Deep drawing force, blanking force, bend allowance, tube unfold, material weight and springback |
 | [Technical PDF library](https://balford.net/resources/technical-series/) | Eighteen individual technical documents plus a 37-page compiled volume |
 | [Site search](https://balford.net/search/) | Search capabilities, applications, materials, cases and engineering resources |
+| [Notion engineering hub](https://reinvented-pulsar-977.notion.site/Balford-Engineering-Hub-58f3230be4918224b694810021478d9f) | A public, search-indexable index of the Ask console, calculators, PDFs and RFQ route |
 | [RFQ and drawing upload](https://rfq.balford.net/) | Route a 2D/3D drawing through engineering and quotation review |
 
 The public resource network is available in more than 35 languages and regional
@@ -90,7 +91,7 @@ The browser assets share one dependency-free calculation core:
 
 - [`packages/stamp-calc`](packages/stamp-calc/) — npm package source for deep drawing, blanking and bend calculations.
 - [`apps/chrome-extension`](apps/chrome-extension/) — Manifest V3 extension with all three calculators.
-- [`notion/Balford-Engineering-Hub.md`](notion/Balford-Engineering-Hub.md) — import-ready Notion resource page.
+- [`notion/Balford-Engineering-Hub.md`](notion/Balford-Engineering-Hub.md) — import-ready source for the [live Notion engineering hub](https://reinvented-pulsar-977.notion.site/Balford-Engineering-Hub-58f3230be4918224b694810021478d9f).
 
 Install the package from this checkout:
 
